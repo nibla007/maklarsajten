@@ -1,0 +1,193 @@
+body {
+    margin: 0;
+    background-color: #1a1a1a;
+    font-family: 'Roboto', sans-serif;
+    color: #ffffff;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+}
+
+.nav {
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-weight: 600;
+    height: 42px;
+    background: #222222;
+}
+
+.nav__link-left {
+    float: left;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav__link-left:hover {
+    background: #ffffff0d;
+}
+
+.nav__link-right {
+    float: right;
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.nav__link-right:hover {
+    background: #ffffff0d;
+}
+
+/*  home.css */
+.home {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* buy.css */
+.residence {
+    box-sizing: border-box;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 0.5rem;
+    padding: 1rem;
+    position: relative;
+    width: calc(25% - 1rem);
+}
+
+.residence::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url('house1.jpg');
+    background-position: center;
+    filter: brightness(50%);
+    background-size: cover;
+    z-index: -1;
+}
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.residence h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 7rem;
+    margin-bottom: 0;
+}
+
+.residence p {
+    color: #ffffff;
+    font-size: 1rem;
+    margin-bottom: 0.1rem;
+}
+
+/* contact.css */
+.contact {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.contact h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* login.css */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.login-form h2 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Basic styling for the form */
+form {
+    max-width: 700px;
+}
+
+/* Style for form labels */
+label {
+    margin-bottom: 8px;
+}
+
+/* Style for form inputs */
+input,
+textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+}
+
+/* Style for the submit button */
+button {
+    background-color: #009579;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hover effect for the submit button */
+button:hover {
+    background-color: #00725f;
+}
+
+/* add resolutions for other devices */
+@media (max-width: 600px) {
+    .nav {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .nav__link-left,
+    .nav__link-right {
+        float: none;
+        text-align: center;
+    }
+
+    .nav__link-right {
+        margin-bottom: 1rem;
+    }
+
+    .residence {
+        width: calc(50% - 2rem);
+    }
+}
