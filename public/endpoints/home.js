@@ -1,4 +1,4 @@
-function homePage() {
+function renderHomepage() {
   const home = `
   <div class="home">
   <h1>Welcome to Mäklarsajten!</h1>

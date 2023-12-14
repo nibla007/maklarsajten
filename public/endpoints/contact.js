@@ -1,4 +1,3 @@
-// contact.js
 function renderContactForm() {
   const contactForm = `
   <div class="contact">

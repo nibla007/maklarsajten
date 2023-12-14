@@ -1,16 +1,15 @@
-function viewResidenceDetails(residenceId) {
+function renderResidenceDetails(residenceId) {
   if (residenceId === undefined) {
     console.error('Residence ID is undefined');
     renderContent('Invalid residence ID.');
     return;
   }
 
-  // Fetch the residence details using residenceId
   fetch(`http://localhost:5500/residence/${residenceId}`)
     .then(response => response.json())
     .then(residence => {
       const detailedView = `
-      <img class="image" src="${residence.image}">
+      <img class="image" src="./house1.jpg">
         <div class="residence">
           <h2>${residence.address}</h2>
           <p class="info">

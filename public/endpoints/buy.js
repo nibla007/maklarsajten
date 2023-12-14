@@ -4,13 +4,16 @@ function renderResidences() {
     .then(residence => {
       const residencesList = residence.map(residence => `
         <a href="#residence-${residence.id}" class="residence-link">
-          <div class="residences">
-            <h2>${residence.address}</h2>
-            <p>${residence.housingType}</p>
-            <p>${residence.size} KVM ${residence.numberOfRooms} ROOMS ${residence.startingPrice} KR</p>
+          <div class="residences-container">
+            <div class="residences">
+              <h2>${residence.address}</h2>
+              <p>${residence.housingType}</p>
+              <p>${residence.size} KVM | ${residence.numberOfRooms} ROOMS | ${residence.startingPrice} KR</p>
+            </div>
           </div>
         </a>
-            `).join('');
+      `).join('');
+
       renderContent(residencesList);
     })
     .catch(error => {

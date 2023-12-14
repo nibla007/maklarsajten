@@ -1,18 +1,18 @@
+// Handle navigation to different routes
 function navigateTo(route, args = []) {
-  // Handle navigation to different routes
   switch (route) {
     case '':
     case 'home':
-      renderContentFromScript('/endpoints/home.js', 'homePage');
+      renderContentFromScript('/endpoints/home.js', 'renderHomepage');
       break;
     case 'buy':
       renderContentFromScript('/endpoints/buy.js', 'renderResidences');
       break;
     case 'residence':
-      renderContentFromScript('/endpoints/residence.js', 'viewResidenceDetails', args);
+      renderContentFromScript('/endpoints/residence.js', 'renderResidenceDetails', args);
       break;
     case 'sell':
-      renderContent('Sell Page Content');
+      renderContentFromScript('/endpoints/sell.js', 'renderSellForm');
       break;
     case 'contact':
       renderContentFromScript('/endpoints/contact.js', 'renderContactForm');
@@ -26,11 +26,12 @@ function navigateTo(route, args = []) {
   }
 }
 
-// Render content for the selected route
+// Render simple content for the selected route
 function renderContent(content) {
   document.getElementById('content').innerHTML = content;
 }
 
+// Render scripted content for the selected route
 function renderContentFromScript(scriptSrc, functionName, args = []) {
   const script = document.createElement('script');
   console.log(script);
@@ -44,7 +45,7 @@ function renderContentFromScript(scriptSrc, functionName, args = []) {
 // Handle hashchange event
 function handleHashChange() {
   const route = location.hash.substring(1);
-  if(route.startsWith('residence')) {
+  if (route.startsWith('residence')) {
     const residenceId = route.split('-')[1];
     navigateTo('residence', [residenceId]);
     return;
