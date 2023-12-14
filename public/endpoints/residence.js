@@ -9,19 +9,24 @@ function viewResidenceDetails(residenceId) {
   fetch(`http://localhost:5500/residence/${residenceId}`)
     .then(response => response.json())
     .then(residence => {
-      console.log("residence details: ", residence);
       const detailedView = `
+      <img class="image" src="${residence.image}">
         <div class="residence">
-          <h2>${residence.address} Details</h2>
-          <p>${residence.housingType}</p>
-          <p>${residence.livingArea} KVM ${residence.numberOfRooms} ROOMS ${residence.startingPrice} KR</p>
-          <p>Balcony: ${residence.balconyPatio}</p>
-          <p>Floor: ${residence.floor}</p>
-          <p>Elevator: ${residence.elevator}</p>
-          <p>Constructed: ${residence.yearOfConstruction}</p>
-          <p>Storehouse: ${residence.storehouse}</p>
-          <p>Parking: ${residence.parking}</p>
-          <p>Inner Yard: ${residence.innerYard}</p>
+          <h2>${residence.address}</h2>
+          <p class="info">
+            STARTING PRICE: ${residence.startingPrice} KR
+            <br>HOUSING TYPE: ${residence.housingType}
+            <br>NUMBER OF ROOMS: ${residence.numberOfRooms}
+            <br>SIZE: ${residence.size} KVM
+            <br>
+            <br>BALCONY: ${residence.balconyPatio}
+            <br>FLOOR: ${residence.floor}
+            <br>ELEVATOR: ${residence.elevator}
+            <br>CONSTRUCTED: ${residence.yearOfConstruction}
+            <br>STOREHOUSE: ${residence.storehouse}
+            <br>PARKING: ${residence.parking}
+            <br>INNER YARD: ${residence.innerYard}
+          </p>
         </div>
       `;
       renderContent(detailedView);

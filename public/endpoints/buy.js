@@ -4,10 +4,10 @@ function renderResidences() {
     .then(residence => {
       const residencesList = residence.map(residence => `
         <a href="#residence-${residence.id}" class="residence-link">
-          <div class="residence">
+          <div class="residences">
             <h2>${residence.address}</h2>
             <p>${residence.housingType}</p>
-            <p>${residence.livingArea} KVM ${residence.numberOfRooms} ROOMS ${residence.startingPrice} KR</p>
+            <p>${residence.size} KVM ${residence.numberOfRooms} ROOMS ${residence.startingPrice} KR</p>
           </div>
         </a>
             `).join('');

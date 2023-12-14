@@ -54,8 +54,8 @@ body {
     align-items: center;
 }
 
-/* buy.css */
-.residence {
+/* buy.css // Displaying all recidences a serach/filter*/
+.residences {
     box-sizing: border-box;
     float: left;
     display: flex;
@@ -67,7 +67,7 @@ body {
     width: calc(25% - 1rem);
 }
 
-.residence::before {
+.residences::before {
     content: "";
     position: absolute;
     top: 0;
@@ -87,7 +87,7 @@ body {
     clear: both;
 }
 
-.residence h2 {
+.residences h2 {
     color: #ffffff;
     font-size: 2rem;
     font-weight: 600;
@@ -95,10 +95,51 @@ body {
     margin-bottom: 0;
 }
 
-.residence p {
+.residences p {
     color: #ffffff;
     font-size: 1rem;
     margin-bottom: 0.1rem;
+}
+
+/* residence.css // Displaying detailed information about a recident*/
+.residence {
+    margin: auto;
+    width: 50%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    color: #ffffff;
+    font-size: 1rem;
+}
+
+.image {
+    display: flex;
+    margin: auto;
+    max-width: 50%;
+    max-height: 50%;
+    padding-top: 1em;
+    filter: brightness(50%);
+    background-size: fill;
+}
+
+.residence h2 {
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+
+.info {
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    font-size: 1rem;
+    line-height: 2;
+    letter-spacing: .15em;
+    margin: 0;
+    padding-bottom: 5em;
 }
 
 /* contact.css */
