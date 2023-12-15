@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@admin.admin",
+      "password": "abc123"
+    }
+  ],
   "residence": [
     {
       "id": 1,

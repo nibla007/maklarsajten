@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "serve-json": "json-server --watch residences.json --port 5500"
+    "serve-json": "json-server --watch database.json --port 5500"
   },
   "dependencies": {
     "json-server": "^0.17.4"
