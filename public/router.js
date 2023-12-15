@@ -18,8 +18,18 @@ function navigateTo(route, args = []) {
       renderContentFromScript('/endpoints/contact.js', 'renderContactForm');
       break;
     case 'login':
+      if (sessionStorage.getItem('token') === 'loggedIn') {
+        window.location.hash = '#admin';
+        return;
+      }
       renderContentFromScript('/endpoints/login.js', 'renderLoginForm');
       break;
+    case 'admin':
+      if (sessionStorage.getItem('token') === 'loggedIn') {
+        renderContentFromScript('/endpoints/admin.js', 'renderAdmin');
+        return;
+      }
+      window.location.hash = '#login';
     default:
       renderContent('404 Page Not Found');
       break;
@@ -34,7 +44,7 @@ function renderContent(content) {
 // Render scripted content for the selected route
 function renderContentFromScript(scriptSrc, functionName, args = []) {
   const script = document.createElement('script');
-  console.log(script);
+  console.log("Current Endpoint: ",script);
   script.src = scriptSrc;
   document.head.appendChild(script);
   script.onload = function () {
