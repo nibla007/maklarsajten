@@ -1,21 +1,28 @@
 function renderContactForm() {
-  const contactForm = `
-  <div class="contactForm">
-    <h2>Contact Us</h2>
-    <form>
-      <label for="name">Name:</label>
-      <input id="name" type="text" required>
-
-      <label for="email">Email:</label>
-      <input type="email" id="email" required>
-
-      <label for="message">Message:</label>
-      <textarea required id="message"></textarea>
-
-      <button type="submit">Submit</button>
-    </form>
-  </div>
-    `;
-
   renderContent(contactForm);
+
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value,
+    };
+
+    fetch('http://localhost:5500/messages', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Message sent:', data);
+      })
+      .catch(error => {
+        console.error('Error adding residence:', error);
+      });
+  });
 }

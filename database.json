@@ -6,11 +6,25 @@
       "password": "abc123"
     }
   ],
+  "messages": [
+    {
+      "name": "test1",
+      "email": "test@test.test",
+      "message": "lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet lorem ipsum dolor sit amet",
+      "id": 1
+    },
+    {
+      "name": "Test word wrap",
+      "email": "test2@test",
+      "message": "testtesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttesttest",
+      "id": 2
+    }
+  ],
   "residence": [
     {
       "id": 1,
       "housingType": "House",
-      "address": "Kungsgatan 63",
+      "address": "Maple Street 12",
       "startingPrice": 250000,
       "numberOfRooms": 3,
       "size": 120,
@@ -25,7 +39,7 @@
     {
       "id": 2,
       "housingType": "Apartment",
-      "address": "456 Oak Avenue",
+      "address": "Oak Avenue 45",
       "startingPrice": 400000,
       "numberOfRooms": 4,
       "size": 180,
@@ -40,7 +54,7 @@
     {
       "id": 3,
       "housingType": "Apartment",
-      "address": "1 New Street",
+      "address": "Birch Lane 63",
       "startingPrice": 100000,
       "numberOfRooms": 3,
       "size": 80,
@@ -55,7 +69,7 @@
     {
       "id": 4,
       "housingType": "Apartment",
-      "address": "2 New Street",
+      "address": "Cedar Road 45",
       "startingPrice": 200000,
       "numberOfRooms": 4,
       "size": 100,
@@ -70,7 +84,7 @@
     {
       "id": 5,
       "housingType": "House",
-      "address": "3 New Street",
+      "address": "Willow Street 43",
       "startingPrice": 300000,
       "numberOfRooms": 5,
       "size": 120,
@@ -85,7 +99,7 @@
     {
       "id": 6,
       "housingType": "Apartment",
-      "address": "4 New Street",
+      "address": "Pine Avenue 12",
       "startingPrice": 400000,
       "numberOfRooms": 3,
       "size": 140,
@@ -100,7 +114,7 @@
     {
       "id": 7,
       "housingType": "Apartment",
-      "address": "5 New Street",
+      "address": "Spruce Lane 63",
       "startingPrice": 500000,
       "numberOfRooms": 4,
       "size": 160,
@@ -115,7 +129,7 @@
     {
       "id": 8,
       "housingType": "Apartment",
-      "address": "6 New Street",
+      "address": "Hemlock Road 42",
       "startingPrice": 600000,
       "numberOfRooms": 3,
       "size": 180,
@@ -130,7 +144,7 @@
     {
       "id": 9,
       "housingType": "Apartment",
-      "address": "7 New Street",
+      "address": "Redwood Avenue 57",
       "startingPrice": 700000,
       "numberOfRooms": 4,
       "size": 200,
@@ -145,7 +159,7 @@
     {
       "id": 10,
       "housingType": "Apartment",
-      "address": "8 New Street",
+      "address": "Cypress Lane 34",
       "startingPrice": 800000,
       "numberOfRooms": 3,
       "size": 220,
@@ -160,7 +174,7 @@
     {
       "id": 11,
       "housingType": "Apartment",
-      "address": "9 New Street",
+      "address": "Juniper Road 62",
       "startingPrice": 900000,
       "numberOfRooms": 4,
       "size": 240,
@@ -175,7 +189,7 @@
     {
       "id": 12,
       "housingType": "Apartment",
-      "address": "10 New Street",
+      "address": "Sycamore Avenue 15",
       "startingPrice": 1000000,
       "numberOfRooms": 3,
       "size": 260,
@@ -190,7 +204,7 @@
     {
       "id": 13,
       "housingType": "Apartment",
-      "address": "11 New Street",
+      "address": "Poplar Lane 6",
       "startingPrice": 1100000,
       "numberOfRooms": 4,
       "size": 280,
@@ -205,7 +219,7 @@
     {
       "id": 14,
       "housingType": "Apartment",
-      "address": "12 New Street",
+      "address": "Eucalyptus Road 62",
       "startingPrice": 1200000,
       "numberOfRooms": 3,
       "size": 300,
@@ -220,7 +234,7 @@
     {
       "id": 15,
       "housingType": "Apartment",
-      "address": "13 New Street",
+      "address": "Acacia Avenue 43",
       "startingPrice": 1300000,
       "numberOfRooms": 4,
       "size": 320,
@@ -235,7 +249,7 @@
     {
       "id": 16,
       "housingType": "Apartment",
-      "address": "14 New Street",
+      "address": "Chestnut Lane 52",
       "startingPrice": 1400000,
       "numberOfRooms": 3,
       "size": 340,
@@ -250,7 +264,7 @@
     {
       "id": 17,
       "housingType": "Apartment",
-      "address": "15 New Street",
+      "address": "Mulberry Road 16",
       "startingPrice": 1500000,
       "numberOfRooms": 4,
       "size": 360,
@@ -265,7 +279,7 @@
     {
       "id": 18,
       "housingType": "Apartment",
-      "address": "16 New Street",
+      "address": "Linden Avenue 71",
       "startingPrice": 1600000,
       "numberOfRooms": 3,
       "size": 380,
@@ -280,7 +294,7 @@
     {
       "id": 19,
       "housingType": "Apartment",
-      "address": "17 New Street",
+      "address": "Elm Lane 53",
       "startingPrice": 1700000,
       "numberOfRooms": 4,
       "size": 400,
@@ -295,7 +309,7 @@
     {
       "id": 20,
       "housingType": "Apartment",
-      "address": "18 New Street",
+      "address": "Cottonwood Road 27",
       "startingPrice": 1800000,
       "numberOfRooms": 3,
       "size": 420,
@@ -308,8 +322,8 @@
       "innerYard": "No"
     },
     {
-      "housingType": "Test",
-      "address": "Test",
+      "housingType": "House",
+      "address": "Post Test 1",
       "startingPrice": 123,
       "numberOfRooms": 123,
       "size": 123,
@@ -319,7 +333,7 @@
       "balconyPatio": "Yes",
       "storehouse": "Yes",
       "parking": "Yes",
-      "innerYard": "Yes",
+      "innerY": "Yes",
       "id": 21
     }
   ]

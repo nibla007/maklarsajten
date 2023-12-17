@@ -26,7 +26,7 @@ function navigateTo(route, args = []) {
       break;
     case 'admin':
       if (sessionStorage.getItem('token') === 'loggedIn') {
-        renderContentFromScript('/endpoints/admin.js', 'renderAdmin');
+        renderContentFromScript('/endpoints/admin.js', 'fetchMessagesAndRenderAdmin');
         return;
       }
       console.log('Access Denied: Not logged in');

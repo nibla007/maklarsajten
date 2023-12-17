@@ -13,7 +13,7 @@ function renderResidenceDetails(residenceId) {
       <div class="residence">
         <h2>${residence.address}</h2>
         <p class="info">
-          STARTING PRICE: ${residence.startingPrice} KR
+          STARTING PRICE: ${formatPrice(residence.startingPrice)} KR
           <br>HOUSING TYPE: ${residence.housingType}
           <br>NUMBER OF ROOMS: ${residence.numberOfRooms}
           <br>SIZE: ${residence.size} KVM
