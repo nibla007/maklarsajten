@@ -4,39 +4,38 @@ function handleLogin(event) {
 
   const email = document.getElementById('email').value;
   const password = document.getElementById('password').value;
-  const loginData = {
-    email,
-    password
-  };
 
-  fetch('http://localhost:5500/users', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    data: JSON.stringify(loginData),
-  }).then((response) => {
-    if (response.status === 200) {
-      return response.json();
-    } else {
-      throw new Error('Invalid email or password');
-    }
-  }).then((loginData) => {
-    sessionStorage.setItem('token', 'loggedIn');
-    console.log(sessionStorage.getItem('token'));
-    updateNavbar();
-    window.location.hash = '#admin';
-  }).catch((error) => {
-    alert(error.message);
-  });
+  // Fetch user data from the server
+  fetch('http://localhost:5500/users')
+    .then(response => response.json())
+    .then(users => {
+      // Find the user with the entered email
+      const user = users.find(user => user.email === email);
+
+      if (user && user.password === password) {
+        // Authentication successful
+        sessionStorage.setItem('token', 'loggedIn');
+        console.log(sessionStorage.getItem('token'));
+        updateNavbar();
+        window.location.hash = '#admin';
+      } else {
+        // Authentication failed
+        alert('Invalid email or password');
+      }
+    })
+    .catch(error => {
+      console.error('Error fetching user data:', error);
+      alert('Error fetching user data');
+    });
 }
+
 
 // Function to update the navbar based on the login status
 function updateNavbar() {
   const loginLink = document.getElementById('loginLink');
   const isLoggedIn = sessionStorage.getItem('token') === 'loggedIn';
   console.log("nav element: ", loginLink);
-  console.log("here: ", isLoggedIn);
+  console.log("User status: ", isLoggedIn);
   if (isLoggedIn) {
     loginLink.textContent = 'LOGOUT';
 

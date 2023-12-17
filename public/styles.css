@@ -1,8 +1,9 @@
 :root {
-    --button-color: #009579;
-    --button-hover-color: #00725f;
+    --button-color: #009999;
+    --button-hover-color: #006666;
     --background-color: #1a1a1a;
     --text-color: #ffffff;
+    --input-color: #444444;
 }
 
 body {
@@ -148,6 +149,25 @@ body {
     margin-bottom: 2rem;
 }
 
+.sliderContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.slider {
+    appearance: none;
+    width: 30%;
+    height: 25px;
+    background: #313131;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
 .info {
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     font-size: 1rem;
@@ -157,9 +177,60 @@ body {
     padding-bottom: 5em;
 }
 
+/* filter.css */
+.filterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    width: 40%;
+    line-height: 2;
+    background-color: #333333;
+}
+
+.filterForm h2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
 /* sell.css */
 .sellForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    width: 40%;
     line-height: 2;
+    background-color: #333333;
+}
+
+.sellForm h2 {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* contact.css */
+.contactForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -167,22 +238,12 @@ body {
     margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
+    width: 30%;
     padding: 1rem;
-    border-radius: 10%;
-    width: 40%;
     background-color: #333333;
 }
 
-/* contact.css */
-.contact {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-}
-
-.contact h2 {
+.contactForm h2 {
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: 600;
@@ -190,34 +251,52 @@ body {
 }
 
 /* login.css */
-.login-form {
+.loginForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
+    padding: 1rem;
+    background-color: #333333;
 }
 
-.login-form h2 {
+.loginForm h2 {
     margin-bottom: 1rem;
     font-size: 2rem;
     font-weight: 600;
     color: var(--text-color);
 }
 
-form {
-    max-width: 700px;
-}
 
+/* form.css */
 label {
     margin-bottom: 8px;
 }
 
 input,
 textarea {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
     width: 100%;
     padding: 8px;
     margin-bottom: 16px;
+    resize: vertical;
+    background-color: var(--input-color);
+    color: var(--text-color);
+}
+
+select {
+    width: 8%;
+    height: 25px;
+    background: var(--input-color);
+    color: var(--text-color);
+    outline: none;
+    opacity: 0.7;
 }
 
 button {
@@ -232,6 +311,7 @@ button {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: 30%;
 }
 
 button:hover {
@@ -239,23 +319,8 @@ button:hover {
 }
 
 /* add resolutions for other devices */
-@media (max-width: 600px) {
-    .nav {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .nav__link-left,
-    .nav__link-right {
-        float: none;
-        text-align: center;
-    }
-
-    .nav__link-right {
-        margin-bottom: 1rem;
-    }
-
-    .residence {
-        width: calc(50% - 2rem);
+@media only screen and (max-width: 1200px) {
+    .residences {
+        max-width: calc(33.33% - 1rem);
     }
 }

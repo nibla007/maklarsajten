@@ -10,23 +10,23 @@ function renderResidenceDetails(residenceId) {
     .then(residence => {
       const detailedView = `
       <img class="image" src="./house1.jpg">
-        <div class="residence">
-          <h2>${residence.address}</h2>
-          <p class="info">
-            STARTING PRICE: ${residence.startingPrice} KR
-            <br>HOUSING TYPE: ${residence.housingType}
-            <br>NUMBER OF ROOMS: ${residence.numberOfRooms}
-            <br>SIZE: ${residence.size} KVM
-            <br>
-            <br>BALCONY: ${residence.balconyPatio}
-            <br>FLOOR: ${residence.floor}
-            <br>ELEVATOR: ${residence.elevator}
-            <br>CONSTRUCTED: ${residence.yearOfConstruction}
-            <br>STOREHOUSE: ${residence.storehouse}
-            <br>PARKING: ${residence.parking}
-            <br>INNER YARD: ${residence.innerYard}
-          </p>
-        </div>
+      <div class="residence">
+        <h2>${residence.address}</h2>
+        <p class="info">
+          STARTING PRICE: ${residence.startingPrice} KR
+          <br>HOUSING TYPE: ${residence.housingType}
+          <br>NUMBER OF ROOMS: ${residence.numberOfRooms}
+          <br>SIZE: ${residence.size} KVM
+          <br>CONSTRUCTED: ${residence.yearOfConstruction}
+          <br>
+          <br>BALCONY: ${residence.balconyPatio}
+          <br>FLOOR: ${residence.floor}
+          <br>ELEVATOR: ${residence.elevator}
+          <br>STOREHOUSE: ${residence.storehouse}
+          <br>PARKING: ${residence.parking}
+          <br>INNER YARD: ${residence.innerYard}
+        </p>
+      </div>
       `;
       renderContent(detailedView);
     })

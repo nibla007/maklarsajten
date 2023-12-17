@@ -6,7 +6,7 @@ function navigateTo(route, args = []) {
       renderContentFromScript('/endpoints/home.js', 'renderHomepage');
       break;
     case 'buy':
-      renderContentFromScript('/endpoints/buy.js', 'renderResidences');
+      renderContentFromScript('/endpoints/buy.js', 'fetchAndRenderResidences');
       break;
     case 'residence':
       renderContentFromScript('/endpoints/residence.js', 'renderResidenceDetails', args);
@@ -29,7 +29,9 @@ function navigateTo(route, args = []) {
         renderContentFromScript('/endpoints/admin.js', 'renderAdmin');
         return;
       }
+      console.log('Access Denied: Not logged in');
       window.location.hash = '#login';
+      break;
     default:
       renderContent('404 Page Not Found');
       break;
@@ -37,14 +39,17 @@ function navigateTo(route, args = []) {
 }
 
 // Render simple content for the selected route
-function renderContent(content) {
+function renderContent(content, additionalContent) {
   document.getElementById('content').innerHTML = content;
+  if (additionalContent) {
+    document.getElementById('content').innerHTML += additionalContent;
+  }
 }
 
 // Render scripted content for the selected route
 function renderContentFromScript(scriptSrc, functionName, args = []) {
   const script = document.createElement('script');
-  console.log("Current Endpoint: ",script);
+  console.log("Current Endpoint: ", script);
   script.src = scriptSrc;
   document.head.appendChild(script);
   script.onload = function () {
