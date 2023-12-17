@@ -202,7 +202,6 @@ function handleLogin(event) {
       if (user && user.password === password) {
         // Authentication successful
         sessionStorage.setItem('token', 'loggedIn');
-        console.log(sessionStorage.getItem('token'));
         updateNavbar();
         window.location.hash = '#admin';
       } else {
@@ -226,8 +225,6 @@ function updateNavbar() {
   const loginLink = document.getElementById('loginLink');
   const isLoggedIn = sessionStorage.getItem('token') === 'loggedIn';
 
-  console.log("nav element: ", loginLink);
-  console.log("User status: ", isLoggedIn);
   if (isLoggedIn) {
     // Add a profile element to nav__link-right before the login element
     const profile = document.createElement('a');
