@@ -12,11 +12,15 @@
 
 <body>
   <nav class="nav">
-    <a href="#home" class="nav__link-left">MÄKLARSAJTEN</a>
-    <a href="#buy" class="nav__link-left">BUY RESIDENCE</a>
-    <a href="#sell" class="nav__link-left">SELL RESIDENCE</a>
-    <a id="loginLink" href="#login" class="nav__link-right">LOGIN</a>
-    <a id="contact" href="#contact" class="nav__link-right">CONTACT</a>
+    <div class="nav__left">
+      <a href="#home" class="nav__link">MÄKLARSAJTEN</a>
+      <a href="#buy" class="nav__link">BUY RESIDENCE</a>
+      <a href="#sell" class="nav__link">SELL RESIDENCE</a>
+    </div>
+    <div class="nav__right">
+      <a id="contact" href="#contact" class="nav__link">CONTACT</a>
+      <a id="loginLink" href="#login" class="nav__link">LOGIN</a>
+    </div>
   </nav>
   <main id="content"></main>
   <script src="router.js" defer></script>

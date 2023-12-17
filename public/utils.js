@@ -226,17 +226,16 @@ function updateNavbar() {
   const isLoggedIn = sessionStorage.getItem('token') === 'loggedIn';
 
   if (isLoggedIn) {
-    // Add a profile element to nav__link-right before the login element
-    const profile = document.createElement('a');
+    const adminLink = document.createElement('a');
 
-    profile.textContent = 'ADMIN';
-    profile.classList.add('nav__link-right');
-    profile.setAttribute('id', 'profile');
-    profile.setAttribute('href', '#admin');
-    contact.parentElement.insertBefore(profile, contact);
+    adminLink.textContent = 'ADMIN';
+    adminLink.classList.add('nav__link');
+    adminLink.setAttribute('id', 'admin');
+    adminLink.setAttribute('href', '#admin');
+    contact.insertAdjacentElement('afterend', adminLink);
 
-    // Add a click event listener to the profile element
-    profile.addEventListener('click', function () {
+    // Add a click event listener to the admin element
+    adminLink.addEventListener('click', function () {
       window.location.hash = '#admin';
     });
 
@@ -249,13 +248,8 @@ function updateNavbar() {
   } else {
     // User logged out, restore "Login"
     loginLink.textContent = 'LOGIN';
-    loginLink.removeEventListener('click', function () {
-      sessionStorage.removeItem('token');
-      updateNavbar();
-    });
-
-    // remove profile element from navbar
-    const profile = document.getElementById('profile');
+    // remove admin element from navbar
+    const profile = document.getElementById('admin');
     if (profile) {
       profile.parentElement.removeChild(profile);
     }

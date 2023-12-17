@@ -32,27 +32,25 @@ body {
     font-weight: 600;
     height: 42px;
     background: #222222;
+    display: flex;
+    justify-content: space-between;
 }
 
-.nav__link-left {
-    float: left;
+.nav__left {
+    display: flex;
+}
+
+.nav__right {
+    display: flex;
+}
+
+.nav__link {
     padding: 12px 24px;
     text-decoration: none;
     color: var(--text-color);
 }
 
-.nav__link-left:hover {
-    background: #ffffff0d;
-}
-
-.nav__link-right {
-    float: right;
-    padding: 12px 24px;
-    text-decoration: none;
-    color: var(--text-color);
-}
-
-.nav__link-right:hover {
+.nav__link:hover {
     background: #ffffff0d;
 }
 
@@ -62,6 +60,17 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    padding: 1rem;
+    background-color: #333333;
+}
+
+.homeImage {
+    margin-bottom: 1rem;
+    border-radius: 10%;
 }
 
 /* buy.css // Displaying all recidences a search / filter */
