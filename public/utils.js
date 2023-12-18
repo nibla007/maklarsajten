@@ -68,7 +68,7 @@ const filterForms = `
       <option value="Yes">Yes</option>
       <option value="No">No</option>
     </select>
-
+    <br>
     <label for="sortCriteria">Sort by:</label>
     <select id="sortCriteria" name="sortCriteria">
       <option value="startingPrice">Price</option>

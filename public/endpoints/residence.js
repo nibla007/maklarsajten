@@ -9,8 +9,8 @@ function renderResidenceDetails(residenceId) {
     .then(response => response.json())
     .then(residence => {
       const detailedView = `
-      <img class="image" src="./house1.jpg">
       <div class="residence">
+        <img class="image" src="./house1.jpg">
         <h2>${residence.address}</h2>
         <p class="info">
           STARTING PRICE: ${formatPrice(residence.startingPrice)} KR
