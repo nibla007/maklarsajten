@@ -6,11 +6,20 @@
     --input-color: #444444;
 }
 
+html,
 body {
+    box-sizing: border-box;
     margin: 0;
     background-color: var(--background-color);
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', sans-serif, 'Arial', sans-serif;
     color: var(--text-color);
+    line-height: 1.2;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
 }
 
 /* scrollbar.css */
@@ -31,15 +40,13 @@ body {
     font-size: 1rem;
     font-weight: 600;
     height: 42px;
+    width: 100%;
     background: #222222;
     display: flex;
     justify-content: space-between;
 }
 
-.nav__left {
-    display: flex;
-}
-
+.nav__left,
 .nav__right {
     display: flex;
 }
@@ -60,7 +67,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -71,15 +77,18 @@ body {
 .homeImage {
     margin-bottom: 1rem;
     border-radius: 10%;
+    width: 80%;
+    height: 80%;
+    filter: brightness(50%);
 }
 
-/* buy.css // Displaying all recidences a search / filter */
+/* buy.css // Displaying all residences a search / filter */
 .residences {
     box-sizing: border-box;
     float: left;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: flex-end;
     margin: 0.5rem;
     padding: 1rem;
     position: relative;
@@ -95,11 +104,11 @@ body {
 .residences::before {
     content: "";
     position: absolute;
+    background-position: center;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background-position: center;
     background-image: url('./house1.jpg');
     filter: brightness(50%);
     background-size: cover;
@@ -113,37 +122,37 @@ body {
 }
 
 .residences h2 {
-    color: var(--text-color);
-    font-size: 2rem;
-    font-weight: 600;
-    margin-top: 7rem;
+    margin-right: auto;
+    margin-top: 0;
     margin-bottom: 0;
+    color: var(--text-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px #000000;
 }
 
 .residences p {
+    margin-right: auto;
     color: var(--text-color);
-    font-size: 1rem;
-    margin-bottom: 0.1rem;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px #000000;
 }
 
-/* residence.css // Displaying detailed information about a single recident*/
+/* residence.css // Displaying detailed information about a single resident */
 .residence {
-    margin: auto;
-    width: 50%;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin: auto;
+    width: 50%;
     position: relative;
     color: var(--text-color);
-    font-size: 1rem;
 }
 
 .image {
-    display: flex;
+    max-width: 100%;
     margin: auto;
-    max-width: 50%;
-    max-height: 50%;
     padding-top: 1em;
     filter: brightness(50%);
     background-size: fill;
@@ -154,7 +163,6 @@ body {
     color: var(--text-color);
     font-size: 2rem;
     font-weight: 600;
-    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 
@@ -178,6 +186,7 @@ body {
 }
 
 .info {
+    display: flex;
     font-family: 'Source Sans Pro', Helvetica, sans-serif;
     font-size: 1rem;
     line-height: 2;
@@ -186,17 +195,16 @@ body {
     padding-bottom: 5em;
 }
 
-/* serach/filter/sort.css */
+/* search/filter/sort.css */
 .filterForm {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    margin-top: 1rem;
+    align-items: center;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
-    width: 40%;
+    width: 50%;
     line-height: 2;
     background-color: #333333;
 }
@@ -221,7 +229,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     padding: 1rem;
@@ -247,7 +254,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
@@ -268,7 +274,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     width: 40%;
@@ -299,7 +304,6 @@ body {
 }
 
 .message {
-    /* more space between lines*/
     line-height: 2rem;
     width: 90%;
     overflow-wrap: break-word;
@@ -311,7 +315,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
     margin-left: auto;
     margin-right: auto;
     width: 30%;
@@ -338,7 +341,7 @@ textarea {
     border-radius: 4px;
     box-sizing: border-box;
     width: 100%;
-    padding: 8px;
+    padding: 1rem;
     margin-bottom: 16px;
     resize: none;
     background-color: var(--input-color);
@@ -346,7 +349,7 @@ textarea {
 }
 
 select {
-    width: 8%;
+    width: 10%;
     height: 25px;
     background: var(--input-color);
     color: var(--text-color);
@@ -373,9 +376,78 @@ button:hover {
     background-color: var(--button-hover-color);
 }
 
-/* add resolutions for other devices */
+/* Media queries */
 @media only screen and (max-width: 1200px) {
     .residences {
-        max-width: calc(33.33% - 1rem);
+        width: calc(25% - 1rem);
+        min-width: 200px;
+        min-height: 200px;
+    }
+
+    .residences h2 {
+        font-size: 1.2rem;
+    }
+
+    .residences p {
+        font-size: 0.8rem;
+    }
+
+    .residence {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+    }
+
+    .image {
+        max-width: 80%;
+    }
+
+    .home,
+    .filterForm,
+    .sellForm,
+    .contactForm,
+    .adminPage,
+    .loginForm {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    .nav {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+
+    .residences {
+        width: calc(25% - 1rem);
+        min-width: 200px;
+        min-height: 200px;
+    }
+
+    .residences h2 {
+        font-size: 1rem;
+    }
+
+    .residences p {
+        font-size: 0.8rem;
+    }
+
+    .home,
+    .residence,
+    .filterForm,
+    .sellForm,
+    .contactForm,
+    .adminPage,
+    .loginForm {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
     }
 }
